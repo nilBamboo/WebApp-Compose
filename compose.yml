@@ -3,7 +3,12 @@ version: '3'
 services:
   web:
     image: nginx:alpine
+    build: .
     ports:
       - 80:80
-    volumes: ./kuda.conf:/etc/nginx/conf.d/
+    volumes: 
+      - conf:/etc/nginx/conf.d/
+    command: /bin/sh
     
+volumes:
+  conf:
