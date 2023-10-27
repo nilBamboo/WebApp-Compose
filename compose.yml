@@ -1,5 +1,9 @@
 version: '3'
 
 services:
-  db:
+  web:
+    image: nginx:alpine
+    ports:
+      - 80:80
+    volumes: ./kuda.conf:/etc/nginx/conf.d/
     
